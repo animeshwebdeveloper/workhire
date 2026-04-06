@@ -13,12 +13,24 @@ export default function WorkersPage() {
         <div className="p-6">
             <h1 className="text-2xl font-bold">Workers</h1>
             <FilterBar setFilter={setFilter} />
-            {filtered.map((w) => (
-                <div key={w.id} className="border p-4 mt-3 rounded">
-                    <h2>{w.name}</h2>
-                    <p>{w.city} | {w.skill}</p>
-                </div>
-            ))}
+            <div className="grid gap-4">
+  {filtered.map((w) => (
+    <div
+      key={w.id}
+      className="p-5 border rounded-xl shadow-sm hover:shadow-md transition"
+    >
+      <h2 className="text-lg font-semibold">{w.name}</h2>
+
+      <p className="text-gray-500 text-sm mt-1">
+        {w.city} • {w.skill}
+      </p>
+
+      <button className="mt-3 border px-3 py-1.5 rounded-md text-sm hover:bg-gray-100">
+        Contact
+      </button>
+    </div>
+  ))}
+</div>
         </div>
     );
 }
