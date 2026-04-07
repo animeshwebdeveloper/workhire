@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const path = usePathname();
@@ -12,27 +14,64 @@ export default function Header() {
       : "text-gray-600 hover:text-blue-500";
 
   return (
-    <header className="border-b bg-white sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-        
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-blue-600">
-          WorkHire
+    <header className="bg-white sticky top-0 z-50 shadow-lg">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+
+        {/* 🔷 Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/work-hire-logo.png"
+            alt="WorkHire"
+            width={150}
+            height={31}
+          />
         </Link>
 
-        {/* Navigation */}
-        <nav className="flex gap-6 text-sm">
+        {/* 🔗 Navigation */}
+        <nav className="hidden md:flex gap-6 ">
           <Link href="/jobs" className={linkStyle("/jobs")}>Jobs</Link>
           <Link href="/workers" className={linkStyle("/workers")}>Workers</Link>
           <Link href="/projects" className={linkStyle("/projects")}>Projects</Link>
         </nav>
 
-        {/* CTA */}
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">
-          Post Work
-        </button>
+        {/* ⚡ Actions */}
+        <div className="flex items-center gap-3">
 
+          {/* Upload CV */}
+          <Link
+            href="/upload-cv"
+            className="hidden md:block  text-gray-600 hover:text-blue-500"
+          >
+            Upload CV
+          </Link>
+
+          {/* Login */}
+          <Link
+            href="/login"
+            className=" text-gray-600 hover:text-blue-500"
+          >
+            Login
+          </Link>
+
+          {/* Register */}
+          <Link
+            href="/register"
+            className="border px-3 py-1.5 rounded-md  hover:bg-gray-100"
+          >
+            Register
+          </Link>
+
+          {/* Post Job CTA */}
+          <Link
+            href="/post-job"
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg  hover:bg-blue-700"
+          >
+            Post Job
+          </Link>
+
+        </div>
       </div>
+      <ThemeToggle />
     </header>
   );
 }

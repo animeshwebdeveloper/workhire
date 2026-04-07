@@ -1,15 +1,16 @@
 import Link from "next/link";
+import TypingText from "./components/TypingText";
 
 export default function Home() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
+    <div className="mx-auto px-6 py-10">
 
       {/* 🚀 HERO SECTION */}
-      <section className="text-center py-16">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Find Jobs, Hire Workers &  
-          <span className="text-blue-600"> Get Work Done Nearby</span>
-        </h1>
+      <section className="text-center ">
+      <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+  Find Jobs, Hire Workers & <br />
+  <TypingText />
+</h1>
 
         <p className="mt-4 text-gray-500 text-lg">
           WorkHire connects job seekers, local workers, and clients — all in one platform.
