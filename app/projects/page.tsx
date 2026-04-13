@@ -11,7 +11,7 @@ export default function ProjectsPage() {
       key={p.id}
       className="p-5 border rounded-xl shadow-sm hover:shadow-md transition"
     >
-      <h2 className="text-lg font-semibold">{p.title}</h2>
+      <h2 className="text-lg font-medium">{p.title}</h2>
 
       <p className="text-gray-500 text-sm mt-1">
         {p.city} • {p.budget}

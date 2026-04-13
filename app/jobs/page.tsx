@@ -19,7 +19,7 @@ export default function JobsPage() {
       key={job.id}
       className="p-5 border rounded-xl shadow-sm hover:shadow-md transition"
     >
-      <h2 className="text-lg font-semibold">{job.title}</h2>
+      <h2 className="text-lg font-medium">{job.title}</h2>
       
       <p className="text-gray-500 text-sm mt-1">
         {job.city} • {job.category}

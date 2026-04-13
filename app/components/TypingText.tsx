@@ -35,13 +35,13 @@ export default function TypingText() {
           setIndex((index + 1) % words.length);
         }
       }
-    }, deleting ? 50 : 90); // speed control
+    }, deleting ? 40 : 150); // speed control
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, deleting]);
 
   return (
-    <span className="text-blue-600">
+    <span className="text-primary font-medium">
       {text}
       <span className="animate-pulse">|</span>
     </span>

@@ -19,7 +19,7 @@ export default function WorkersPage() {
       key={w.id}
       className="p-5 border rounded-xl shadow-sm hover:shadow-md transition"
     >
-      <h2 className="text-lg font-semibold">{w.name}</h2>
+      <h2 className="text-lg font-medium">{w.name}</h2>
 
       <p className="text-gray-500 text-sm mt-1">
         {w.city} • {w.skill}

@@ -10,11 +10,12 @@ export default function Header() {
 
   const linkStyle = (route: string) =>
     path === route
-      ? "text-blue-600 font-semibold"
-      : "text-gray-600 hover:text-blue-500";
+      ? "text-primary font-medium"
+      : "text-black hover:text-primary dark:text-white";
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-lg">
+    <>
+    <header className="bg-white dark:bg-black sticky top-0 z-50 shadow-lg dark:shadow-white/5">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
 
         {/* 🔷 Logo */}
@@ -22,9 +23,10 @@ export default function Header() {
           <Image
             src="/images/work-hire-logo.png"
             alt="WorkHire"
-            width={150}
-            height={31}
+            width={60}
+            height={40}
           />
+          <span className="text-xl font-medium">Work<span className="text-primary">Hire</span></span>
         </Link>
 
         {/* 🔗 Navigation */}
@@ -40,7 +42,7 @@ export default function Header() {
           {/* Upload CV */}
           <Link
             href="/upload-cv"
-            className="hidden md:block  text-gray-600 hover:text-blue-500"
+            className="hidden md:block  text-black hover:text-primary dark:text-white"
           >
             Upload CV
           </Link>
@@ -48,23 +50,17 @@ export default function Header() {
           {/* Login */}
           <Link
             href="/login"
-            className=" text-gray-600 hover:text-blue-500"
+            className=" text-black hover:text-primary dark:text-white"
           >
-            Login
+            Login/Register
           </Link>
 
-          {/* Register */}
-          <Link
-            href="/register"
-            className="border px-3 py-1.5 rounded-md  hover:bg-gray-100"
-          >
-            Register
-          </Link>
+         
 
           {/* Post Job CTA */}
           <Link
             href="/post-job"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg  hover:bg-blue-700"
+            className="bg-primary text-white px-4 py-2 rounded-lg  hover:bg-blue-500"
           >
             Post Job
           </Link>
@@ -73,5 +69,7 @@ export default function Header() {
       </div>
       <ThemeToggle />
     </header>
+    <div className="hidden text-primary bg-primary border-primary"></div>
+    </>
   );
 }
